@@ -1,0 +1,69 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="Admin_AddProduct.aspx.cs" Inherits="WebProject.admin.Admin_AddProduct" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form id="form1" runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td style="width: 296px">รหัสสินค้า :</td>
+            <td style="width: 554px">
+                <asp:TextBox ID="TextBox1" runat="server" Width="275px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">ชื่อสินค้า :</td>
+            <td style="width: 554px">
+                <asp:TextBox ID="TextBox2" runat="server" Width="274px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">ราคาสินค้า :</td>
+            <td style="width: 554px">
+                <asp:TextBox ID="TextBox3" runat="server" Width="276px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">จำนวนคงเหลือ :</td>
+            <td style="width: 554px">
+                <asp:TextBox ID="TextBox4" runat="server" Width="273px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">รายละเอียด :</td>
+            <td style="width: 554px">
+                <asp:TextBox ID="TextBox5" runat="server" Height="85px" TextMode="MultiLine" Width="277px"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">ประเภทสินค้า :</td>
+            <td style="width: 554px">
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CateName" DataValueField="CateID">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProjectDBConnectionString %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">ภาพสินค้า :</td>
+            <td style="width: 554px">
+                <asp:Image ID="Image1" runat="server" Height="166px" Width="217px" />
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+                <asp:Button ID="Button4" runat="server" Text="Preview" OnClick="Button4_Click" />
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 296px">&nbsp;</td>
+            <td style="width: 554px">
+                <asp:Button ID="Button1" runat="server" Text="เพิ่มข้อมูล" OnClick="Button1_Click" />
+&nbsp;&nbsp;
+                <asp:Button ID="Button3" runat="server" Text="ยกเลิก" OnClick="Button3_Click" />
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+</asp:Content>
