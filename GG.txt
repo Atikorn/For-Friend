@@ -1,0 +1,8 @@
+if (FileUpload1.HasFile)
+             {
+                string filename = System.IO.Path.GetFileName(FileUpload1.FileName);
+                FileUpload1.SaveAs(Server.MapPath("~/imagesPro/") + filename);
+                string Pathfile = "~/imagesPro/" + filename;
+                Image1.ImageUrl = Pathfile;
+                Session["Fupload"] = Pathfile;
+            }
